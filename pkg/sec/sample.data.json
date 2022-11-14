@@ -1,0 +1,188 @@
+{
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 200,
+        "relation": "eq"
+      },
+      "max_score": 1016.7671,
+      "hits": [
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1654126",
+          "_score": 1016.7671,
+          "_source": {
+            "entity": "ZIM Integrated Shipping Services Ltd. (ZIM)",
+            "entity_words": "ZIM Integrated Shipping Services Ltd. (ZIM)",
+            "tickers": "ZIM",
+            "rank": 12261082
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1876588",
+          "_score": 35.2835,
+          "_source": {
+            "entity": "ZimVie Inc. (ZIMV)",
+            "entity_words": "ZimVie Inc. (ZIMV)",
+            "tickers": "ZIMV",
+            "rank": 10722327
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1136869",
+          "_score": 24.79535,
+          "_source": {
+            "entity": "ZIMMER BIOMET HOLDINGS, INC. (ZBH)",
+            "entity_words": "ZIMMER BIOMET HOLDINGS, INC. (ZBH)",
+            "tickers": "ZBH",
+            "rank": 69617777
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1124160",
+          "_score": 22.581652,
+          "_source": {
+            "entity": "ZIM CORP",
+            "entity_words": "ZIM CORP",
+            "rank": 12742136
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1200705",
+          "_score": 22.581652,
+          "_source": {
+            "entity": "ZIM CORP",
+            "entity_words": "ZIM CORP",
+            "rank": 1827576
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1844115",
+          "_score": 21.973038,
+          "_source": {
+            "entity": "Zimak Avi",
+            "entity_words": "Zimak Avi",
+            "rank": 10632
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1784745",
+          "_score": 21.973038,
+          "_source": {
+            "entity": "ZIMIT, INC.",
+            "entity_words": "ZIMIT, INC.",
+            "rank": 2041
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1191734",
+          "_score": 21.396366,
+          "_source": {
+            "entity": "ZIMMER KEN",
+            "entity_words": "ZIMMER KEN",
+            "rank": 2038
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1257480",
+          "_score": 21.396366,
+          "_source": {
+            "entity": "HARTZ ZIMA",
+            "entity_words": "HARTZ ZIMA",
+            "rank": 1379
+          }
+        },
+        {
+          "_index": "edgar_entity_20221112_040047",
+          "_type": "_doc",
+          "_id": "1358874",
+          "_score": 21.396366,
+          "_source": {
+            "entity": "ZIMBRA INC",
+            "entity_words": "ZIMBRA INC",
+            "rank": 10
+          }
+        }
+      ]
+    },
+    "query": {
+      "query": {
+        "bool": {
+          "should": [
+            {
+              "match": {
+                "entity": {
+                  "query": "zim",
+                  "operator": "and"
+                }
+              }
+            },
+            {
+              "match": {
+                "tickers": {
+                  "query": "zim",
+                  "operator": "and",
+                  "boost": 100
+                }
+              }
+            },
+            {
+              "exists": {
+                "field": "tickers",
+                "boost": 10
+              }
+            }
+          ],
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "match": {
+                      "entity": {
+                        "query": "zim",
+                        "operator": "and"
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "_id": {
+                        "query": "zim"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "from": 0,
+      "size": 10
+    }
+  }
