@@ -1,4 +1,4 @@
-// test 
+// test
 
 package sec
 
@@ -8,8 +8,11 @@ import (
 
 // make read the csv read back into the file is the same
 func TestParseCik(t *testing.T) {
-	cikData := ParseCik()
+	cikData, err := ParseCik()
 	if len(cikData) == 0 {
-		t.Error("No cik data was returned")
+		t.Fatal("No cik data was returned")
+	}
+	if err != nil {
+		t.Fatal("err")
 	}
 }

@@ -1,6 +1,6 @@
 package types
 
-type CikData struct {
-	company string
-	cik     string
+type ClkData struct {
+	Company string
+	Clk     string
 }
