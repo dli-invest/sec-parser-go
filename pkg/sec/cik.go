@@ -6,7 +6,7 @@ import (
 )
 
 // make post request to https://efts.sec.gov/LATEST/search-index
-func ParseCik() {
+func ParseCik() (cikData []types.CikData, err error) {
 	url := "https://www.sec.gov/include/ticker.txt"
 	jsonValue, _ := json.Marshal(values)
 	req, err := http.NewRequest("GET", url, bytes.NewBuffer(jsonValue))
@@ -58,5 +58,5 @@ func ParseCik() {
 
 		// check if the first field is the company we are looking for
 	}
-	return cikList, nil
+	return
 }
