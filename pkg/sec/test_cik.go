@@ -4,7 +4,7 @@ package sec
 
 import (
 	"testing"
-	"github.com/dli-invest/sec-parser-go/pkg/cik"
+	"github.com/dli-invest/sec-parser-go/pkg/sec"
 )
 
 // make read the csv read back into the file is the same
