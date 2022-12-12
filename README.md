@@ -7,6 +7,9 @@ Using company_tickers.json to validate requests, pull from api as needed.
 https://www.sec.gov/files/company_tickers.json
 
 
+See https://github.com/sec-edgar/sec-edgar for up to date library
+
+
 ## Original code 
 
 View 
